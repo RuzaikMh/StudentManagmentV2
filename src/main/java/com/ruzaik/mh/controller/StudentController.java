@@ -37,12 +37,12 @@ public class StudentController {
 		boolean result = false;
 		
 		for(Student s : studentList) {
-			if(s.getRegistrationNumber() == student.getRegistrationNumber()) {
+			
+			if((s.getRegistrationNumber()).equals(student.getRegistrationNumber())) {
 				result = false;
 			}
 			else {
 				result = true;
-				
 			}
 		}
 		
@@ -71,6 +71,25 @@ public class StudentController {
 		ModelAndView mv = new ModelAndView("new-student");
 		mv.addObject("courseList", courseList);
 		mv.addObject("alertMsg", "Failed");
+		return mv;
+	}
+	
+	@RequestMapping("/view-student")
+	public ModelAndView viewStudent() {
+		List<Student> studentList = repo.findAll();
+		
+		ModelAndView mv = new ModelAndView("view-student");
+		mv.addObject("studentList", studentList);
+		
+		return mv;
+	}
+	
+	@RequestMapping("/serachStudent")
+	public ModelAndView search(String search)
+	{
+		List<Student> students = repo.findByStudentNameLike(search);
+		ModelAndView mv = new ModelAndView("view-student");
+		mv.addObject("studentList", students);
 		return mv;
 	}
 	

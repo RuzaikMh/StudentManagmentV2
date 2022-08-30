@@ -12,8 +12,8 @@ function alertMsg(){
 
 function alertMsg2(){
 	document.getElementById('myalert').innerHTML = `
-		<div class="alert alert-success alert-dismissible fade show" role="alert">
-		  <strong>Failled !!!</strong> Student with same registration number already exists.
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		  <strong>Failled!!!</strong> Student with same registration number already exists.
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 		    <span aria-hidden="true">&times;</span>
 		  </button>
