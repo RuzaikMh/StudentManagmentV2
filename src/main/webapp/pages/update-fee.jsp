@@ -146,7 +146,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-hand-holding-usd"></i> Student Fees</a>
+                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-hand-holding-usd"></i> Update Fees</a>
 
                     <a href="view-fee" class="btn btn-primary ml-auto btn-icon-split">
                         <span class="icon text-white-50">
@@ -163,7 +163,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 d-txt-none-s">
-                        <h1 class="h3 mb-0 text-gray-800">Student Fees</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Fees</h1>
                     </div>
 
                     <div class="row">
@@ -173,14 +173,14 @@
                             <!-- Default Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Add Fee</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Update Fee</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form action="add-new-fee" method="post">
+                                    <form action="updateFee" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="registration">Registration Number</label>
-                                                <input type="text" name="registrationNumber" class="form-control" id="registration"
+                                                <input value="${studentFee.registrationNumber}" type="text" name="registrationNumber" class="form-control" id="registration"
                                                     placeholder="IT17117754" list="studentRegistrationNumber"
                                                      required="required">
                                                 <datalist id="studentRegistrationNumber">
@@ -191,7 +191,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="paymentId">Payment Id</label>
-                                                <input name="paymentId" type="text" class="form-control" id="paymentId"
+                                                <input value="${studentFee.paymentId}" name="paymentId" type="text" class="form-control" id="paymentId"
                                                     placeholder="P123" required="required" readonly="readonly">
                                             </div>
                                         </div>
@@ -200,32 +200,25 @@
                                                 <label for="purpose">Purpose Of Payment</label>
                                                 <select name="purposeOfPayment" id="purpose" class="form-control" required="required">
                                                     <option value="">Select Purpose of Payment</option>
-	                                                <option value="Registration Fee">Registration Fee</option>
-	                                                <option value="Semester Registration Fee">Semester Registration Fee</option>
-	                                                <option value="Prorata Fee">Prorata Fee</option>
-	                                                <option value="Repeat Exam Fee">Repeat Exam Fee</option>
+	                                                <option value="Registration Fee" <c:if test="${studentFee.purposeOfPayment eq 'Registration Fee'}">selected="selected"</c:if> >Registration Fee</option>
+	                                                <option value="Semester Registration Fee" <c:if test="${studentFee.purposeOfPayment eq 'Semester Registration Fee'}">selected="selected"</c:if> >Semester Registration Fee</option>
+	                                                <option value="Prorata Fee" <c:if test="${studentFee.purposeOfPayment eq 'Prorata Fee'}">selected="selected"</c:if> >Prorata Fee</option>
+	                                                <option value="Repeat Exam Fee" <c:if test="${studentFee.purposeOfPayment eq 'Repeat Exam Fee'}">selected="selected"</c:if> >Repeat Exam Fee</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="amount">Payment Amount</label>
-                                                <input name="paymentAmount" type="number" class="form-control" id="amount"
+                                                <input value="${studentFee.paymentAmount}" name="paymentAmount" type="number" class="form-control" id="amount"
                                                     placeholder="Amount" required="required">
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
 					
-					<div class="row">
-                   	 	<div class="col-lg-12" id="myalert">
-                   	 		
-                   	 	</div>
-                    </div>
-                    
-                    <textarea id="successMsg" rows="1" cols="1" hidden>${alertMsg}</textarea>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -283,8 +276,6 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     
-    <!-- Custom script for fee-->
-    <script src="js/custom-fee.js"></script>
 
 </body>
 

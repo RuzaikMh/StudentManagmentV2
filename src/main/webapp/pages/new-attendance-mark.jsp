@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>     
 <!DOCTYPE html>
 <html lang="en">
 
@@ -146,13 +146,13 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-hand-holding-usd"></i> Student Fees</a>
+                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-clipboard-list"></i> Student Attendance</a>
 
-                    <a href="view-fee" class="btn btn-primary ml-auto btn-icon-split">
+                    <a href="#" class="btn btn-primary ml-auto btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-right"></i>
                         </span>
-                        <span class="text">View Fees</span>
+                        <span class="text">View Attendance</span>
                     </a>
 
                 </nav>
@@ -163,7 +163,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 d-txt-none-s">
-                        <h1 class="h3 mb-0 text-gray-800">Student Fees</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Student Attendance</h1>
                     </div>
 
                     <div class="row">
@@ -176,56 +176,62 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Add Fee</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form action="add-new-fee" method="post">
+                                    <form>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="registration">Registration Number</label>
-                                                <input type="text" name="registrationNumber" class="form-control" id="registration"
-                                                    placeholder="IT17117754" list="studentRegistrationNumber"
-                                                     required="required">
-                                                <datalist id="studentRegistrationNumber">
-	                                            	<c:forEach items="${studentList}" var="StudentID">
-	                                            		<option value="${StudentID.registrationNumber}">
-	                                            	</c:forEach>
-                                            	</datalist>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="paymentId">Payment Id</label>
-                                                <input name="paymentId" type="text" class="form-control" id="paymentId"
-                                                    placeholder="P123" required="required" readonly="readonly">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="purpose">Purpose Of Payment</label>
-                                                <select name="purposeOfPayment" id="purpose" class="form-control" required="required">
-                                                    <option value="">Select Purpose of Payment</option>
-	                                                <option value="Registration Fee">Registration Fee</option>
-	                                                <option value="Semester Registration Fee">Semester Registration Fee</option>
-	                                                <option value="Prorata Fee">Prorata Fee</option>
-	                                                <option value="Repeat Exam Fee">Repeat Exam Fee</option>
+                                                <label for="course">Select your Course</label>
+                                                <select id="course" class="form-control" required="required" disabled="disabled">
+                                                	<option value="${attendance.course}">${attendance.course}</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="amount">Payment Amount</label>
-                                                <input name="paymentAmount" type="number" class="form-control" id="amount"
-                                                    placeholder="Amount" required="required">
+                                                <label for="date">Date</label>
+                                                <input value="${attendance.date}" type="date" class="form-control" id="date" readonly="readonly">
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                        
+                                        <div class="form-row">
+	                                        	<div class="table-responsive-xl col-md-12">
+		                                            <table class="table table-hover table-stripped">
+		                                                <thead>
+		                                                    <tr>
+		                                                        <td>#</td>
+		                                                        <td>Registration Number</td>
+		                                                        <td>Student Name</td>
+		                                                        <td>Mark Attendance</td>
+		                                                    </tr>
+		                                                </thead>
+		                                                <tbody>
+		                                                    <c:forEach items="${studentList}" var="student">
+		                                                        <tr>
+		                                                            <th scope="row">1</th>
+		                                                            <td>${student.registrationNumber}</td>
+		                                                            <td>${student.studentName}</td>
+		
+		                                                            <td>
+			                                                            <fieldset>
+			                                                                <input type="radio" id="radioChoice1"
+																		     name="contact" value="email">
+																		    <label for="contactChoice1">Present</label>
+																			<br>
+																		    <input type="radio" id="radioChoice2"
+																		     name="contact" value="phone">
+																		    <label for="contactChoice2">Absent</label>
+																		</fieldset>
+		                                                            </td>
+		                                                        </tr>
+		                                                    </c:forEach>
+		                                                </tbody>
+		                                            </table>
+	                                        </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Go to attendance</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-					
-					<div class="row">
-                   	 	<div class="col-lg-12" id="myalert">
-                   	 		
-                   	 	</div>
-                    </div>
-                    
-                    <textarea id="successMsg" rows="1" cols="1" hidden>${alertMsg}</textarea>
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -282,9 +288,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    
-    <!-- Custom script for fee-->
-    <script src="js/custom-fee.js"></script>
 
 </body>
 

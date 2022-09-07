@@ -11,4 +11,6 @@ public interface StudentRepo extends JpaRepository<Student, String> {
 
 	@Query("from Student where studentName like %?1%")
 	List<Student> findByStudentNameLike(String studentName);
+
+	List<Student> findByCourse(String course);
 }
