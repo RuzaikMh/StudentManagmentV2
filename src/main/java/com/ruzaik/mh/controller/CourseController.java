@@ -9,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ruzaik.mh.dao.CourseRepo;
 import com.ruzaik.mh.model.Course;
-import com.ruzaik.mh.model.Student;
 
 @Controller
 public class CourseController {
