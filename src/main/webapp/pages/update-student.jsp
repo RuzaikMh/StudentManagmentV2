@@ -147,7 +147,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-user-plus"></i> Register Student </a>
+                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-user-plus"></i> Update Student </a>
 
                     <a href="view-student" class="btn btn-primary ml-auto btn-icon-split">
                         <span class="icon text-white-50">
@@ -164,7 +164,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 d-txt-none-s">
-                        <h1 class="h3 mb-0 text-gray-800">Register Student</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Student</h1>
                     </div>
 
                     <div class="row">
@@ -174,20 +174,20 @@
                             <!-- Default Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Add New Student</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">New Student Details</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form action="add-new-student" method="post">
+                                    <form action="update-student" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputStudentName">Student Name</label>
-                                                <input name="studentName" type="text" class="form-control" id="inputStudentName"
+                                                <input name="studentName" value="${student.studentName}" type="text" class="form-control" id="inputStudentName"
                                                     placeholder="Name" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="registrationNumber">Registration Number</label>
-                                                <input name="registrationNumber" class="form-control" id="registrationNumber"
-                                                    placeholder="IT17117760" required>
+                                                <input name="registrationNumber" value="${student.registrationNumber}" class="form-control" id="registrationNumber"
+                                                    placeholder="IT17117760" required readonly="readonly">
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -196,29 +196,29 @@
                                                 <select name="course" id="course" class="form-control" required>
 	                                               	<option value="">Select Course</option>
 	                                               	<c:forEach items="${courseList}" var="courses">
-	                                                    <option value="${courses.courseName}">${courses.courseName}</option>
+	                                                    <option value="${courses.courseName}" <c:if test="${student.course eq courses.courseName}">selected="selected"</c:if> >${courses.courseName}</option>
 	                                                </c:forEach>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="nicNo">NIC No</label>
-                                                <input name="nic" type="text" class="form-control" id="nicNo" placeholder="NIC No" required>
+                                                <input name="nic" value="${student.nic}" type="text" class="form-control" id="nicNo" placeholder="NIC No" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="phoneNumber">Phone Number</label>
-                                                <input name="phoneNumber" type="number" class="form-control" id="phoneNumber"
+                                                <input name="phoneNumber" value="${student.phoneNumber}" type="number" class="form-control" id="phoneNumber"
                                                     placeholder="Phone Number" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="email">Email</label>
-                                                <input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
+                                                <input name="email" value="${student.email}" type="email" class="form-control" id="email" placeholder="Email" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Address</label>
-                                            <input name="address" type="text" class="form-control" id="inputAddress"
+                                            <input name="address" value="${student.address}" type="text" class="form-control" id="inputAddress"
                                                 placeholder="1234 Main St" required>
                                         </div>
                                         <div class="form-row">
@@ -226,70 +226,61 @@
                                                 <label for="province">Province</label>
                                                 <select name="province" id="province" class="form-control" required>
                                                     <option value="">Select Province</option>
-                                                    <option value="Western Province">Western Province</option>
-                                                    <option value="Central Province">Central Province</option>
-                                                    <option value="Southern Province">Southern Province</option>
-                                                    <option value="Uva Province">Uva Province</option>
-                                                    <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
-                                                    <option value="North Western Province">North Western Province</option>
-                                                    <option value="North Central Province">North Central Province</option>
-                                                    <option value="Northern Province">Northern Province</option>
-                                                    <option value="Eastern Province">Eastern Province</option>
+                                                    <option value="Western Province" <c:if test="${student.province eq 'Western Province'}">selected="selected"</c:if> >Western Province</option>
+                                                    <option value="Central Province" <c:if test="${student.province eq 'Central Province'}">selected="selected"</c:if> >Central Province</option>
+                                                    <option value="Southern Province" <c:if test="${student.province eq 'Southern Province'}">selected="selected"</c:if> >Southern Province</option>
+                                                    <option value="Uva Province" <c:if test="${student.province eq 'Uva Province'}">selected="selected"</c:if> >Uva Province</option>
+                                                    <option value="Sabaragamuwa Province" <c:if test="${student.province eq 'Sabaragamuwa Province'}">selected="selected"</c:if> >Sabaragamuwa Province</option>
+                                                    <option value="North Western Province" <c:if test="${student.province eq 'North Western Province'}">selected="selected"</c:if> >North Western Province</option>
+                                                    <option value="North Central Province" <c:if test="${student.province eq 'North Central Province'}">selected="selected"</c:if> >North Central Province</option>
+                                                    <option value="Northern Province" <c:if test="${student.province eq 'Northern Province'}">selected="selected"</c:if> >Northern Province</option>
+                                                    <option value="Eastern Province" <c:if test="${student.province eq 'Eastern Province'}">selected="selected"</c:if> >Eastern Province</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="district">District</label>
                                                 <select name="district" id="district" class="form-control" required>
                                                     <option value="">Select District</option>
-                                                    <option value="Colombo">Colombo</option>
-                                                    <option value="Gampaha">Gampaha</option>
-                                                    <option value="Kalutara">Kalutara</option>
-                                                    <option value="Kandy">Kandy</option>
-                                                    <option value="Matale">Matale</option>
-                                                    <option value="Nuwara Eliya">Nuwara Eliya</option>
-                                                    <option value="Galle">Galle</option>
-                                                    <option value="Matara">Matara</option>
-                                                    <option value="Hambantota">Hambantota</option>
-                                                    <option value="Jaffna">Jaffna</option>
-                                                    <option value="Kilinochchi">Kilinochchi</option>
-                                                    <option value="Mannar">Mannar</option>
-                                                    <option value="Vavuniya">Vavuniya</option>
-                                                    <option value="Mullaitivu">Mullaitivu</option>
-                                                    <option value="Batticaloa">Batticaloa</option>
-                                                    <option value="Ampara">Ampara</option>
-                                                    <option value="Trincomalee">Trincomalee</option>
-                                                    <option value="Kurunegala">Kurunegala</option>
-                                                    <option value="Puttalam">Puttalam</option>
-                                                    <option value="Anuradhapura">Anuradhapura</option>
-                                                    <option value="Polonnaruwa">Polonnaruwa</option>
-                                                    <option value="Badulla">Badulla</option>
-                                                    <option value="Moneragala">Moneragala</option>
-                                                    <option value="Ratnapura">Ratnapura</option>
-                                                    <option value="Kegalle">Kegalle</option>
+                                                    <option value="Colombo" <c:if test="${student.district eq 'Colombo'}">selected="selected"</c:if> >Colombo</option>
+                                                    <option value="Gampaha" <c:if test="${student.district eq 'Gampaha'}">selected="selected"</c:if> >Gampaha</option>
+                                                    <option value="Kalutara" <c:if test="${student.district eq 'Kalutara'}">selected="selected"</c:if> >Kalutara</option>
+                                                    <option value="Kandy" <c:if test="${student.district eq 'Kandy'}">selected="selected"</c:if> >Kandy</option>
+                                                    <option value="Matale" <c:if test="${student.district eq 'Matale'}">selected="selected"</c:if> >Matale</option>
+                                                    <option value="Nuwara Eliya" <c:if test="${student.district eq 'Nuwara Eliya'}">selected="selected"</c:if> >Nuwara Eliya</option>
+                                                    <option value="Galle" <c:if test="${student.district eq 'Galle'}">selected="selected"</c:if> >Galle</option>
+                                                    <option value="Matara" <c:if test="${student.district eq 'Matara'}">selected="selected"</c:if> >Matara</option>
+                                                    <option value="Hambantota" <c:if test="${student.district eq 'Hambantota'}">selected="selected"</c:if> >Hambantota</option>
+                                                    <option value="Jaffna" <c:if test="${student.district eq 'Jaffna'}">selected="selected"</c:if> >Jaffna</option>
+                                                    <option value="Kilinochchi" <c:if test="${student.district eq 'Kilinochchi'}">selected="selected"</c:if> >Kilinochchi</option>
+                                                    <option value="Mannar" <c:if test="${student.district eq 'Mannar'}">selected="selected"</c:if> >Mannar</option>
+                                                    <option value="Vavuniya" <c:if test="${student.district eq 'Vavuniya'}">selected="selected"</c:if> >Vavuniya</option>
+                                                    <option value="Mullaitivu" <c:if test="${student.district eq 'Mullaitivu'}">selected="selected"</c:if> >Mullaitivu</option>
+                                                    <option value="Batticaloa" <c:if test="${student.district eq 'Batticaloa'}">selected="selected"</c:if> >Batticaloa</option>
+                                                    <option value="Ampara" <c:if test="${student.district eq 'Ampara'}">selected="selected"</c:if> >Ampara</option>
+                                                    <option value="Trincomalee" <c:if test="${student.district eq 'Trincomalee'}">selected="selected"</c:if> >Trincomalee</option>
+                                                    <option value="Kurunegala" <c:if test="${student.district eq 'Kurunegala'}">selected="selected"</c:if> >Kurunegala</option>
+                                                    <option value="Puttalam" <c:if test="${student.district eq 'Puttalam'}">selected="selected"</c:if> >Puttalam</option>
+                                                    <option value="Anuradhapura" <c:if test="${student.district eq 'Anuradhapura'}">selected="selected"</c:if> >Anuradhapura</option>
+                                                    <option value="Polonnaruwa" <c:if test="${student.district eq 'Polonnaruwa'}">selected="selected"</c:if> >Polonnaruwa</option>
+                                                    <option value="Badulla" <c:if test="${student.district eq 'Badulla'}">selected="selected"</c:if> >Badulla</option>
+                                                    <option value="Moneragala" <c:if test="${student.district eq 'Moneragala'}">selected="selected"</c:if> >Moneragala</option>
+                                                    <option value="Ratnapura" <c:if test="${student.district eq 'Ratnapura'}">selected="selected"</c:if> >Ratnapura</option>
+                                                    <option value="Kegalle" <c:if test="${student.district eq 'Kegalle'}">selected="selected"</c:if> >Kegalle</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="date">Joined Date</label>
-                                                <input name="date" type="date" class="form-control" id="date" required>
+                                                <input name="date" value="${student.date}" type="date" class="form-control" id="date" required>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Register</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                     </form>
                                 </div>
                             </div>
 
                         </div>
 
-                    </div>
-                    
-                    <div class="row">
-                   	 	<div class="col-lg-12" id="myalert">
-                   	 		
-                   	 	</div>
-                    </div>
-                    
-                    <textarea id="successMsg" rows="1" cols="1" hidden>${alertMsg}</textarea>
-
+                    </div> 
                 </div>
                 <!-- /.container-fluid -->
 
@@ -346,9 +337,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    
-    <!-- MyCustom scripts -->
-	<script src="js/custom.js"></script>
 	
 </body>
 

@@ -147,13 +147,13 @@
                             <i class="fa fa-bars"></i>
                         </button>
 
-                        <a class="navbar-brand d-sm-none-max"><i class="fas fa-user"></i> View Student </a>
+                        <a class="navbar-brand d-sm-none-max"><i class="fas fa-user"></i> View Courses </a>
 
-                        <a href="new-student" class="btn btn-primary ml-auto btn-icon-split">
+                        <a href="new-course" class="btn btn-primary ml-auto btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-right"></i>
                             </span>
-                            <span class="text">New Students</span>
+                            <span class="text">New Course</span>
                         </a>
 
                     </nav>
@@ -164,7 +164,7 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4 d-txt-none-s">
-                            <h1 class="h3 mb-0 text-gray-800">Students Details</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Course Details</h1>
                         </div>
 
                         <div class="row">
@@ -175,8 +175,8 @@
                                 <div class="card shadow mb-4">
                                     <div
                                         class="card-header py-3 view-search-bar justify-content-between align-items-center view-card-search">
-                                        <h6 class="m-0 font-weight-bold text-primary card-title-hide">Students List</h6>
-                                        <form action = "serachStudent" method="get" class="d-sm-inline-block form-inline">
+                                        <h6 class="m-0 font-weight-bold text-primary card-title-hide">Course List</h6>
+                                        <form action = "serachCourse" method="get" class="d-sm-inline-block form-inline">
                                             <div class="input-group">
                                                 <input type="text" class="form-control border-0 small"
                                                     placeholder="Search" aria-label="Search"
@@ -195,42 +195,32 @@
                                                 <thead>
                                                     <tr>
                                                         <td>#</td>
-                                                        <td>Registration Number</td>
-                                                        <td>Student Name</td>
-                                                        <td>Enrolled Course</td>
-                                                        <td>NIC</td>
-                                                        <td>Phone Number</td>
-                                                        <td>Email</td>
-                                                        <td>Address</td>
-                                                        <td>Joined Date</td>
-                                                        <td>Province</td>
-                                                        <td>District</td>
+                                                        <td>Course ID</td>
+                                                        <td>Course Name</td>
+                                                        <td>Department</td>
+                                                        <td>Duration</td>
+                                                        <td>Lecture</td>
                                                         <td>Action</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <c:forEach items="${studentList}" var="student">
+                                                    <c:forEach items="${courseList}" var="course">
                                                         <tr>
                                                             <th scope="row">1</th>
-                                                            <td>${student.registrationNumber}</td>
-                                                            <td>${student.studentName}</td>
-                                                            <td>${student.course}</td>
-                                                            <td>${student.nic}</td>
-                                                            <td>${student.phoneNumber}</td>
-                                                            <td>${student.email}</td>
-                                                            <td>${student.address}</td>
-                                                            <td>${student.date}</td>
-                                                            <td>${student.province}</td>
-                                                            <td>${student.district}</td>
+                                                            <td>${course.courseID}</td>
+                                                            <td>${course.courseName}</td>
+                                                            <td>${course.department}</td>
+                                                            <td>${course.duration}</td>
+                                                            <td>${course.lecture}</td>
 
                                                             <td>
                                                                 <div>
-                                                                    <a href='updateStudentPage?update=${student.registrationNumber}'
+                                                                    <a href='updateCoursePage?update=${course.courseID}'
                                                                         class='btn btn-warning btn-xs'>Update</a>
                                                                 </div>
                                                                 <br>
                                                                 <div>
-                                                                    <a href='deleteStudent?delete=${student.registrationNumber}'
+                                                                    <a href='deleteCourse?delete=${course.courseID}'
                                                                         class='btn btn-danger btn-xs'>Delete&nbsp;</a>
                                                                 </div>
                                                             </td>

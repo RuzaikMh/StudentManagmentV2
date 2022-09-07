@@ -93,4 +93,29 @@ public class StudentController {
 		return mv;
 	}
 	
+	@RequestMapping("/deleteStudent")
+	public ModelAndView delete(String delete) 
+	{
+		repo.deleteById(delete);
+		return viewStudent();
+	}
+	
+	@RequestMapping("/updateStudentPage")
+	public ModelAndView updatePage(String update) 
+	{
+		ModelAndView mv = new ModelAndView("update-student");
+		Student student = repo.getReferenceById(update);
+		List<Course> coList = courseRepo.findAll();
+		mv.addObject("student", student);
+		mv.addObject("courseList", coList);
+		return mv;
+	}
+	
+	@RequestMapping("/update-student")
+	public ModelAndView updateStudent(Student student)
+	{
+		repo.save(student);
+		return viewStudent();
+	}
+	
 }

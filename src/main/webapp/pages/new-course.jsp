@@ -147,7 +147,7 @@
 
                     <a class="navbar-brand d-sm-none-max"><i class="fas fa-chalkboard-teacher"></i> Course Creation</a>
 
-                    <a href="#" class="btn btn-primary ml-auto btn-icon-split">
+                    <a href="view-course" class="btn btn-primary ml-auto btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-right"></i>
                         </span>
@@ -180,19 +180,19 @@
                                             <div class="form-group col-md-6">
                                                 <label for="inputCourseID">Course ID</label>
                                                 <input name="courseID" type="text" class="form-control" id="inputCourseID"
-                                                    placeholder="Code">
+                                                    placeholder="Code" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="department">Department</label>
-                                                <select name="department" id="department" class="form-control">
-                                                    <option selected>Select Department</option>
-                                                    <option>Software Engineering</option>
-                                                    <option>Cyber Security</option>
-                                                    <option>Information Technology</option>
-                                                    <option>Computer Systems &amp; Network Engineering</option>
-                                                    <option>Data Science</option>
-                                                    <option>Information Systems Engineering</option>
-                                                    <option>Interactive Media</option>
+                                                <select name="department" id="department" class="form-control" required>
+                                                    <option value="">Select Department</option>
+                                                    <option value="Software Engineering" >Software Engineering</option>
+                                                    <option value="Cyber Security" >Cyber Security</option>
+                                                    <option value="Information Technology" >Information Technology</option>
+                                                    <option value="Computer Systems & Network Engineering" >Computer Systems &amp; Network Engineering</option>
+                                                    <option value="Data Science" >Data Science</option>
+                                                    <option value="Information Systems Engineering" >Information Systems Engineering</option>
+                                                    <option value="Interactive Media" >Interactive Media</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -200,19 +200,19 @@
                                             <div class="form-group col-md-6">
                                                 <label for="courseName">Course Name</label>
                                                 <input name="courseName" id="courseName" type="text" class="form-control"
-                                                    placeholder="Course Name">
+                                                    placeholder="Course Name" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="duration">Duration In Months</label>
                                                 <input name="duration" type="number" class="form-control" id="duration"
-                                                    placeholder="Duration">
+                                                    placeholder="Duration" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="lecture">Lecture In Charge</label>
                                                 <input name="lecture" type="text" class="form-control" id="lecture"
-                                                    placeholder="Lecture">
+                                                    placeholder="Lecture" required>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Add</button>
@@ -221,6 +221,14 @@
                             </div>
                         </div>
                     </div>
+
+					<div class="row">
+                   	 	<div class="col-lg-12" id="myalert">
+                   	 		
+                   	 	</div>
+                    </div>
+                    
+                    <textarea id="successMsg" rows="1" cols="1" hidden>${alertMsg}</textarea>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -278,6 +286,9 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    
+    <!-- MyCustom scripts -->
+	<script src="js/custom-course.js"></script>
 
 </body>
 

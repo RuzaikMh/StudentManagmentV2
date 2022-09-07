@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SLIIT</title>
+    <title>SB Admin 2 - Cards</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -147,13 +147,13 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-user-plus"></i> Register Student </a>
+                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-chalkboard-teacher"></i> Course Update</a>
 
-                    <a href="view-student" class="btn btn-primary ml-auto btn-icon-split">
+                    <a href="view-course" class="btn btn-primary ml-auto btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-right"></i>
                         </span>
-                        <span class="text">View Students</span>
+                        <span class="text">View Course</span>
                     </a>
 
                 </nav>
@@ -164,7 +164,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 d-txt-none-s">
-                        <h1 class="h3 mb-0 text-gray-800">Register Student</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Course Update</h1>
                     </div>
 
                     <div class="row">
@@ -174,115 +174,57 @@
                             <!-- Default Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Add New Student</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Update Course Details</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form action="add-new-student" method="post">
+                                    <form action="update-course" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputStudentName">Student Name</label>
-                                                <input name="studentName" type="text" class="form-control" id="inputStudentName"
-                                                    placeholder="Name" required>
+                                                <label for="inputCourseID">Course ID</label>
+                                                <input name="courseID" value="${course.courseID}" type="text" class="form-control" id="inputCourseID"
+                                                    placeholder="Code" readonly="readonly" required>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="registrationNumber">Registration Number</label>
-                                                <input name="registrationNumber" class="form-control" id="registrationNumber"
-                                                    placeholder="IT17117760" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="course">Course</label>
-                                                <select name="course" id="course" class="form-control" required>
-	                                               	<option value="">Select Course</option>
-	                                               	<c:forEach items="${courseList}" var="courses">
-	                                                    <option value="${courses.courseName}">${courses.courseName}</option>
-	                                                </c:forEach>
+                                                <label for="department">Department</label>
+                                                <select name="department" id="department" class="form-control" required>
+                                                    <option value="">Select Department</option>
+                                                    <option value="Software Engineering" <c:if test="${course.department eq 'Software Engineering'}">selected="selected"</c:if> >Software Engineering</option>
+                                                    <option value="Cyber Security" <c:if test="${course.department eq 'Cyber Security'}">selected="selected"</c:if> >Cyber Security</option>
+                                                    <option value="Information Technology" <c:if test="${course.department eq 'Information Technology'}">selected="selected"</c:if> >Information Technology</option>
+                                                    <option value="Computer Systems & Network Engineering" <c:if test="${course.department eq 'Computer Systems & Network Engineering'}">selected="selected"</c:if> >Computer Systems &amp; Network Engineering</option>
+                                                    <option value="Data Science" <c:if test="${course.department eq 'Data Science'}">selected="selected"</c:if> >Data Science</option>
+                                                    <option value="Information Systems Engineering" <c:if test="${course.department eq 'Information Systems Engineering'}">selected="selected"</c:if> >Information Systems Engineering</option>
+                                                    <option value="Interactive Media" <c:if test="${course.department eq 'Interactive Media'}">selected="selected"</c:if> >Interactive Media</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="nicNo">NIC No</label>
-                                                <input name="nic" type="text" class="form-control" id="nicNo" placeholder="NIC No" required>
-                                            </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="phoneNumber">Phone Number</label>
-                                                <input name="phoneNumber" type="number" class="form-control" id="phoneNumber"
-                                                    placeholder="Phone Number" required>
+                                                <label for="courseName">Course Name</label>
+                                                <input name="courseName" value="${course.courseName}" id="courseName" type="text" class="form-control"
+                                                    placeholder="Course Name" required>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="email">Email</label>
-                                                <input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
+                                                <label for="duration">Duration In Months</label>
+                                                <input name="duration" value="${course.duration}" type="number" class="form-control" id="duration"
+                                                    placeholder="Duration" required>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputAddress">Address</label>
-                                            <input name="address" type="text" class="form-control" id="inputAddress"
-                                                placeholder="1234 Main St" required>
                                         </div>
                                         <div class="form-row">
-                                            <div class="form-group col-md-4">
-                                                <label for="province">Province</label>
-                                                <select name="province" id="province" class="form-control" required>
-                                                    <option value="">Select Province</option>
-                                                    <option value="Western Province">Western Province</option>
-                                                    <option value="Central Province">Central Province</option>
-                                                    <option value="Southern Province">Southern Province</option>
-                                                    <option value="Uva Province">Uva Province</option>
-                                                    <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
-                                                    <option value="North Western Province">North Western Province</option>
-                                                    <option value="North Central Province">North Central Province</option>
-                                                    <option value="Northern Province">Northern Province</option>
-                                                    <option value="Eastern Province">Eastern Province</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="district">District</label>
-                                                <select name="district" id="district" class="form-control" required>
-                                                    <option value="">Select District</option>
-                                                    <option value="Colombo">Colombo</option>
-                                                    <option value="Gampaha">Gampaha</option>
-                                                    <option value="Kalutara">Kalutara</option>
-                                                    <option value="Kandy">Kandy</option>
-                                                    <option value="Matale">Matale</option>
-                                                    <option value="Nuwara Eliya">Nuwara Eliya</option>
-                                                    <option value="Galle">Galle</option>
-                                                    <option value="Matara">Matara</option>
-                                                    <option value="Hambantota">Hambantota</option>
-                                                    <option value="Jaffna">Jaffna</option>
-                                                    <option value="Kilinochchi">Kilinochchi</option>
-                                                    <option value="Mannar">Mannar</option>
-                                                    <option value="Vavuniya">Vavuniya</option>
-                                                    <option value="Mullaitivu">Mullaitivu</option>
-                                                    <option value="Batticaloa">Batticaloa</option>
-                                                    <option value="Ampara">Ampara</option>
-                                                    <option value="Trincomalee">Trincomalee</option>
-                                                    <option value="Kurunegala">Kurunegala</option>
-                                                    <option value="Puttalam">Puttalam</option>
-                                                    <option value="Anuradhapura">Anuradhapura</option>
-                                                    <option value="Polonnaruwa">Polonnaruwa</option>
-                                                    <option value="Badulla">Badulla</option>
-                                                    <option value="Moneragala">Moneragala</option>
-                                                    <option value="Ratnapura">Ratnapura</option>
-                                                    <option value="Kegalle">Kegalle</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="date">Joined Date</label>
-                                                <input name="date" type="date" class="form-control" id="date" required>
+                                            <div class="form-group col-md-12">
+                                                <label for="lecture">Lecture In Charge</label>
+                                                <input name="lecture" value="${course.lecture}" type="text" class="form-control" id="lecture"
+                                                    placeholder="Lecture" required>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Register</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                     </form>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-                    
-                    <div class="row">
+
+					<div class="row">
                    	 	<div class="col-lg-12" id="myalert">
                    	 		
                    	 	</div>
@@ -300,7 +242,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Ruzaik Ahamed 2022</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
@@ -348,8 +290,8 @@
     <script src="js/sb-admin-2.min.js"></script>
     
     <!-- MyCustom scripts -->
-	<script src="js/custom.js"></script>
-	
+	<script src="js/custom-course.js"></script>
+
 </body>
 
 </html>
