@@ -173,20 +173,18 @@
                             <!-- Default Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Add Fee</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Mark Attendance</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="mark-attendance" method="get">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="course">Select your Course</label>
-                                                <select id="course" class="form-control" required="required" disabled="disabled">
-                                                	<option value="${attendance.course}">${attendance.course}</option>
-                                                </select>
+                                                <label for="course">Course</label>
+                                                <input name="course" value="${attendance.course}" type="text" class="form-control" readonly="readonly">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="date">Date</label>
-                                                <input value="${attendance.date}" type="date" class="form-control" id="date" readonly="readonly">
+                                                <input name="date" value="${attendance.date}" type="date" class="form-control" id="date" readonly="readonly">
                                             </div>
                                         </div>
                                         
@@ -205,19 +203,17 @@
 		                                                    <c:forEach items="${studentList}" var="student">
 		                                                        <tr>
 		                                                            <th scope="row">1</th>
-		                                                            <td>${student.registrationNumber}</td>
+		                                                            <td>${student.registrationNumber}
+		                                                            	<input type="hidden" name="registrationNumber" value="${student.registrationNumber}" />
+		                                                            </td>
 		                                                            <td>${student.studentName}</td>
 		
 		                                                            <td>
-			                                                            <fieldset>
-			                                                                <input type="radio" id="radioChoice1"
-																		     name="contact" value="email">
-																		    <label for="contactChoice1">Present</label>
-																			<br>
-																		    <input type="radio" id="radioChoice2"
-																		     name="contact" value="phone">
-																		    <label for="contactChoice2">Absent</label>
-																		</fieldset>
+			                                                            <select class="form-control" name="attendance[]" required="required">
+			                                                            	<option value="">Select Attendance</option>
+			                                                            	<option value="Present">Present</option>
+			                                                            	<option value="Absent">Absent</option>
+			                                                            </select>
 		                                                            </td>
 		                                                        </tr>
 		                                                    </c:forEach>
@@ -225,7 +221,7 @@
 		                                            </table>
 	                                        </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Go to attendance</button>
+                                        <button type="submit" class="btn btn-primary">Save attendance</button>
                                     </form>
                                 </div>
                             </div>
@@ -288,6 +284,16 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    
+    <script>
+			var table = document.getElementsByTagName('table')[0],
+			  rows = table.getElementsByTagName('tr'),
+			  text = 'textContent' in document ? 'textContent' : 'innerText';
+	
+			for (var i = 1, len = rows.length; i < len; i++) {
+			  rows[i].children[0][text] = i;
+			}
+		</script>
 
 </body>
 
