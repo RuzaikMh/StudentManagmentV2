@@ -15,6 +15,8 @@ public class Attendance {
 	private String attendance;
 	private String course;
 	
+	public Attendance() {}
+	
 	public Attendance(String registrationNumber, String date, String attendance, String course) {
 		super();
 		this.registrationNumber = registrationNumber;
@@ -22,6 +24,7 @@ public class Attendance {
 		this.attendance = attendance;
 		this.course = course;
 	}
+	
 	public int getId() {
 		return id;
 	}

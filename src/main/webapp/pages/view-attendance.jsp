@@ -149,7 +149,7 @@
 
                         <a class="navbar-brand d-sm-none-max"><i class="fas fa-user"></i>View Attendance</a>
 
-                        <a href="new-student" class="btn btn-primary ml-auto btn-icon-split">
+                        <a href="new-attendance" class="btn btn-primary ml-auto btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-right"></i>
                             </span>
@@ -176,7 +176,7 @@
                                     <div
                                         class="card-header py-3 view-search-bar justify-content-between align-items-center view-card-search">
                                         <h6 class="m-0 font-weight-bold text-primary card-title-hide">Attendance List</h6>
-                                        <form action = "serachStudent" method="get" class="d-sm-inline-block form-inline">
+                                        <form action = "serachAttendance" method="get" class="d-sm-inline-block form-inline">
                                             <div class="input-group">
                                                 <input type="text" class="form-control border-0 small"
                                                     placeholder="Search" aria-label="Search"
@@ -212,12 +212,12 @@
                                                             <td>${attendance.attendance}</td>
                                                             <td>
                                                                 <div>
-                                                                    <a href='updateStudentPage?update=${student.registrationNumber}'
+                                                                    <a href='update-attendance-page?update=${attendance.id}'
                                                                         class='btn btn-warning btn-xs'>Update</a>
                                                                 </div>
                                                                 <br>
                                                                 <div>
-                                                                    <a href='deleteStudent?delete=${student.registrationNumber}'
+                                                                    <a href='delete-attendance?delete=${attendance.id}'
                                                                         class='btn btn-danger btn-xs'>Delete&nbsp;</a>
                                                                 </div>
                                                             </td>

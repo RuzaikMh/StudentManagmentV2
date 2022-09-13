@@ -70,7 +70,46 @@ public class attendanceController {
 	
 	@RequestMapping("view-attendance")
 	public ModelAndView viewAttendance() {
+		List<Attendance> attendanceList = repo.findAll();
+		
 		ModelAndView mv = new ModelAndView("view-attendance");
+		mv.addObject("attendanceList", attendanceList);
 		return mv;
+	}
+	
+	@RequestMapping("/delete-attendance")
+	public ModelAndView deleteAttendance(int delete) {
+		repo.deleteById(delete);
+		return viewAttendance();
+	}
+	
+	@RequestMapping("/serachAttendance")
+	public ModelAndView search(String search)
+	{
+		List<Attendance> attendances = repo.findByRegistrationNumberLike(search);
+		ModelAndView mv = new ModelAndView("view-attendance");
+		mv.addObject("attendanceList", attendances);
+		return mv;
+	}
+	
+	@RequestMapping("/update-attendance-page")
+	public ModelAndView updateAttendancePage(int update) {
+		Attendance attendance = repo.getReferenceById(update);
+		
+		ModelAndView mv = new ModelAndView("update-attendance");
+		mv.addObject("attendance", attendance);
+		return mv;
+	}
+	
+	@RequestMapping("/update-attendance")
+	public ModelAndView updateAttendance(String registrationNumber, String date, String attendance, int id) {
+		Attendance attendanceObj = repo.getReferenceById(id);
+		
+		attendanceObj.setAttendance(attendance);
+		attendanceObj.setDate(date);
+		
+		repo.save(attendanceObj);
+		
+		return viewAttendance();
 	}
 }

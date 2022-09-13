@@ -148,7 +148,7 @@
 
                     <a class="navbar-brand d-sm-none-max"><i class="fas fa-clipboard-list"></i> Student Attendance</a>
 
-                    <a href="#" class="btn btn-primary ml-auto btn-icon-split">
+                    <a href="view-attendance" class="btn btn-primary ml-auto btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-right"></i>
                         </span>
@@ -173,7 +173,7 @@
                             <!-- Default Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Add Fee</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Select course and date</h6>
                                 </div>
                                 <div class="card-body">
                                     <form action="attendance-list" method="post">

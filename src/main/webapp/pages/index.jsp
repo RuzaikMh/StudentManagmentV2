@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SLIIT Student Management Tool</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -69,8 +69,8 @@
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-student.html">Register</a>
-                        <a class="collapse-item active" href="cards.html">View</a>
+                        <a class="collapse-item" href="new-student">Register</a>
+                        <a class="collapse-item active" href="view-student">View</a>
                     </div>
                 </div>
             </li>
@@ -85,8 +85,8 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-course.html">New Course</a>
-                        <a class="collapse-item" href="utilities-border.html">View</a>
+                        <a class="collapse-item" href="new-course">New Course</a>
+                        <a class="collapse-item" href="view-course">View</a>
                     </div>
             </li>
 
@@ -99,8 +99,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-fee.html">New Fee</a>
-                        <a class="collapse-item" href="blank.html">View</a>
+                        <a class="collapse-item" href="new-fee">New Fee</a>
+                        <a class="collapse-item" href="view-fee">View</a>
                     </div>
                 </div>
             </li>
@@ -115,8 +115,8 @@
                 <div id="collapseAttendance" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-attendance.html">Mark Attendance</a>
-                        <a class="collapse-item" href="blank.html">View</a>
+                        <a class="collapse-item" href="new-attendance">Mark Attendance</a>
+                        <a class="collapse-item" href="view-attendance">View</a>
                     </div>
                 </div>
             </li>

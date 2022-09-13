@@ -146,13 +146,13 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-clipboard-list"></i> Student Attendance</a>
+                    <a class="navbar-brand d-sm-none-max"><i class="fas fa-clipboard-list"></i> Update Attendance</a>
 
-                    <a href="new-attendance" class="btn btn-primary ml-auto btn-icon-split">
+                    <a href="view-attendance" class="btn btn-primary ml-auto btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-right"></i>
                         </span>
-                        <span class="text">Go Back</span>
+                        <span class="text">View Attendance</span>
                     </a>
 
                 </nav>
@@ -163,7 +163,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 d-txt-none-s">
-                        <h1 class="h3 mb-0 text-gray-800">Student Attendance</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Attendance</h1>
                     </div>
 
                     <div class="row">
@@ -173,55 +173,32 @@
                             <!-- Default Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Mark Attendance</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Update Details</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form action="mark-attendance" method="get">
+                                    <form action="update-attendance" method="post">
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="course">Course</label>
-                                                <input name="course" value="${attendance.course}" type="text" class="form-control" readonly="readonly">
+                                            <div class="form-group col-md-4">
+                                                <label for="r/n">Registration Number</label>
+                                                <input value="${attendance.registrationNumber}" name="registrationNumber" type="text" class="form-control" id="r/n" readonly="readonly">
                                             </div>
-                                            <div class="form-group col-md-6">
+                                
+                                            <div class="form-group col-md-4">
                                                 <label for="date">Date</label>
-                                                <input name="date" value="${attendance.date}" type="date" class="form-control" id="date" readonly="readonly">
+                                                <input value="${attendance.date}" name="date" type="date" class="form-control" id="date">
                                             </div>
+                                            
+                                             <div class="form-group col-md-4">
+                                             	<label for="attendanceInput">Date</label>
+                                             	<select id="attendanceInput" name="attendance" class="form-control" required="required">
+                                             		<option value="">Select Attendance</option>
+                                             		<option value="Present" <c:if test="${attendance.attendance eq 'Present'}">selected="selected"</c:if> >Present</option>
+                                             		<option value="Absent" <c:if test="${attendance.attendance eq 'Absent'}">selected="selected"</c:if> >Absent</option>
+                                             	</select>
+                                             	<input value="${attendance.id}" name="id" type="hidden">
+                                             </div>
                                         </div>
-                                        
-                                        <div class="form-row">
-	                                        	<div class="table-responsive-xl col-md-12">
-		                                            <table class="table table-hover table-stripped">
-		                                                <thead>
-		                                                    <tr>
-		                                                        <td>#</td>
-		                                                        <td>Registration Number</td>
-		                                                        <td>Student Name</td>
-		                                                        <td>Mark Attendance</td>
-		                                                    </tr>
-		                                                </thead>
-		                                                <tbody>
-		                                                    <c:forEach items="${studentList}" var="student">
-		                                                        <tr>
-		                                                            <th scope="row">1</th>
-		                                                            <td>${student.registrationNumber}
-		                                                            	<input type="hidden" name="registrationNumber" value="${student.registrationNumber}" />
-		                                                            </td>
-		                                                            <td>${student.studentName}</td>
-		
-		                                                            <td>
-			                                                            <select class="form-control" name="attendance[]" required="required">
-			                                                            	<option value="">Select Attendance</option>
-			                                                            	<option value="Present">Present</option>
-			                                                            	<option value="Absent">Absent</option>
-			                                                            </select>
-		                                                            </td>
-		                                                        </tr>
-		                                                    </c:forEach>
-		                                                </tbody>
-		                                            </table>
-	                                        </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Save attendance</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                     </form>
                                 </div>
                             </div>
@@ -284,16 +261,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    
-    <script>
-			var table = document.getElementsByTagName('table')[0],
-			  rows = table.getElementsByTagName('tr'),
-			  text = 'textContent' in document ? 'textContent' : 'innerText';
-	
-			for (var i = 1, len = rows.length; i < len; i++) {
-			  rows[i].children[0][text] = i;
-			}
-		</script>
 
 </body>
 
