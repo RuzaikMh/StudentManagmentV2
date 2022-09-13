@@ -34,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-start" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-start" href="/">
                 <div class="sidebar-brand-icon">
                     <i><img src="img/SLIIT_Logo_Crest.png" width="25px" height="25px"></i>
                     <div class="sidebar-brand-text mx-3">SLIIT</div>
@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -177,7 +177,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Students</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${studentCount}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
@@ -213,7 +213,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 Course</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">16</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${courseCount}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-book-open fa-2x text-gray-300"></i>
@@ -231,7 +231,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Fees</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">500,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rs.${feeAmount}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>

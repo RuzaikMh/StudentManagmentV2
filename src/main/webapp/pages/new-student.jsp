@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SLIIT</title>
+    <title>SLIIT Student Management Tool</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,6 +22,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link href="css/calander.css" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -35,7 +36,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-start" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-start" href="/">
                 <div class="sidebar-brand-icon">
                     <i><img src="img/SLIIT_Logo_Crest.png" width="25px" height="25px"></i>
                     <div class="sidebar-brand-text mx-3">SLIIT</div>
@@ -47,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -70,8 +71,8 @@
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-student.html">Register</a>
-                        <a class="collapse-item active" href="cards.html">View</a>
+                        <a class="collapse-item" href="new-student">Register</a>
+                        <a class="collapse-item active" href="view-student">View</a>
                     </div>
                 </div>
             </li>
@@ -86,8 +87,8 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-course.html">New Course</a>
-                        <a class="collapse-item" href="utilities-border.html">View</a>
+                        <a class="collapse-item" href="new-course">New Course</a>
+                        <a class="collapse-item" href="view-course">View</a>
                     </div>
             </li>
 
@@ -100,8 +101,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-fee.html">New Fee</a>
-                        <a class="collapse-item" href="blank.html">View</a>
+                        <a class="collapse-item" href="new-fee">New Fee</a>
+                        <a class="collapse-item" href="view-fee">View</a>
                     </div>
                 </div>
             </li>
@@ -116,8 +117,8 @@
                 <div id="collapseAttendance" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-attendance.html">Mark Attendance</a>
-                        <a class="collapse-item" href="blank.html">View</a>
+                        <a class="collapse-item" href="new-attendance">Mark Attendance</a>
+                        <a class="collapse-item" href="view-attendance">View</a>
                     </div>
                 </div>
             </li>
