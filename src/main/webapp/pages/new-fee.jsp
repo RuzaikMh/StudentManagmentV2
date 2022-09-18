@@ -213,6 +213,12 @@
                                                     placeholder="Amount" required="required">
                                             </div>
                                         </div>
+                                        <div class="form-row">
+                                        	<div class="form-group col-md-12">
+                                                <label for="date">Date</label>
+                                                <input name="date" type="date" class="form-control" id="date">
+                                            </div>
+                                        </div>
                                         <button type="submit" class="btn btn-primary">Add</button>
                                     </form>
                                 </div>

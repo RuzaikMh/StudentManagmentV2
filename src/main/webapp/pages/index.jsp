@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -194,11 +196,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Lecturers</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">8</div>
+                                               	Today Attendance</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${attendanceCount}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -234,7 +236,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Rs.${feeAmount}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-coins fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -297,40 +299,30 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Recent Student Fees</h6>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Reg Num</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Course</th>
-                                                <th scope="col">Fee</th>
-                                                <th scope="col">Date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>03/16/2022</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                                <td>03/16/2022</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                                <td>03/16/2022</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                	<div class="table-responsive-xl">
+	                                    <table class="table table-hover table-stripped">
+	                                        <thead>
+	                                            <tr>
+	                                            	<th>#</th>
+	                                                <th scope="col">Reg Num</th>
+	                                                <th scope="col">Amount</th>
+	                                                <th scope="col">Purpose Of Payment</th>
+	                                                <th scope="col">Date</th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                        	<c:forEach items="${feeList}" var="fee">
+		                                            <tr>
+		                                                <td scope="row">1</td>
+		                                                <td>${fee.registrationNumber}</td>
+		                                                <td>${fee.paymentAmount}</td>
+		                                                <td>${fee.purposeOfPayment}</td>
+		                                                <td>${fee.date}</td>
+		                                            </tr>
+	                                           </c:forEach>
+	                                        </tbody>
+	                                    </table>
+	                            	</div>
                                 </div>
                             </div>
 
@@ -338,7 +330,7 @@
                             <div class="row">
                                 <div class="col-lg-6 mb-4">
                                     <div class="card bg-primary text-white shadow blue">
-                                        <a href="new-student.html" class="card-buttons-dashboard">
+                                        <a href="new-student" class="card-buttons-dashboard">
                                             <div class="card-body">
                                                 <i class="fas fa-user-plus fa-2x text-gray-300"></i>
                                                 <span>New Student</span>
@@ -348,7 +340,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="card bg-success text-white shadow green">
-                                        <a href="new-fee.html" class="card-buttons-dashboard">
+                                        <a href="new-fee" class="card-buttons-dashboard">
                                             <div class="card-body">
                                                 <i class="fas fa-hand-holding-usd fa-2x text-gray-300"></i>
                                                 <span>New Fee</span>
@@ -368,43 +360,37 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Newly Added Students</h6>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Reg Num</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Course</th>
-                                                <th scope="col">Joined Date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                	<div class="table-responsive-xl">
+	                                    <table class="table table-hover table-stripped">
+	                                        <thead>
+	                                            <tr>
+	                                           		<th>#</th>
+	                                                <th scope="col">Reg Num</th>
+	                                                <th scope="col">Name</th>
+	                                                <th scope="col">Course</th>
+	                                                <th scope="col">Joined Date</th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                        	<c:forEach items="${studentsList}" var="student">
+		                                            <tr>
+		                                                <td scope="row">1</td>
+		                                                <td>${student.registrationNumber}</td>
+		                                                <td>${student.studentName}</td>
+		                                                <td>${student.course}</td>
+		                                                <td>${student.date}</td>
+		                                            </tr>
+		                                          </c:forEach>
+	                                        </tbody>
+	                                    </table>
+	                            	</div>        
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-lg-6 mb-4">
                                     <div class="card bg-info text-white shadow lightBlue ">
-                                        <a href="new-course.html" class="card-buttons-dashboard">
+                                        <a href="new-course" class="card-buttons-dashboard">
                                             <div class="card-body">
                                                 <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
                                                 <span>New Course</span>
@@ -415,7 +401,7 @@
 
                                 <div class="col-lg-6 mb-4">
                                     <div class="card text-white shadow yellow">
-                                        <a href="new-attendance.html" class="card-buttons-dashboard">
+                                        <a href="new-attendance" class="card-buttons-dashboard">
                                             <div class="card-body">
                                                 <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                                                 <span>Mark Attendance</span>
@@ -424,7 +410,7 @@
                                     </div>
                                 </div>
                             </div>
-
+							
                         </div>
                     </div>
 
@@ -494,8 +480,26 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    
 
-
+	<script>
+			var table = document.getElementsByTagName('table')[1],
+			  rows = table.getElementsByTagName('tr'),
+			  text = 'textContent' in document ? 'textContent' : 'innerText';
+	
+			for (var i = 1, len = rows.length; i < len; i++) {
+			  rows[i].children[0][text] = i;
+			}
+			
+			var table = document.getElementsByTagName('table')[0],
+			  rows = table.getElementsByTagName('tr'),
+			  text = 'textContent' in document ? 'textContent' : 'innerText';
+	
+			for (var i = 1, len = rows.length; i < len; i++) {
+			  rows[i].children[0][text] = i;
+			}
+			
+	</script>
 
 </body>
 

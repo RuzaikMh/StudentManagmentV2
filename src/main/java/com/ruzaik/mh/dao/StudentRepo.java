@@ -13,4 +13,7 @@ public interface StudentRepo extends JpaRepository<Student, String> {
 	List<Student> findByStudentNameLike(String studentName);
 
 	List<Student> findByCourse(String course);
+	
+	@Query("from Student order by date DESC")
+	List<Student> orderByDate();
 }

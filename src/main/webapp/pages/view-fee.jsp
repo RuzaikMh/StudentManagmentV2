@@ -199,6 +199,7 @@
                                                         <td>Payment Id</td>
                                                         <td>Payment Amount</td>
                                                         <td>Purpose Of Payment</td>
+                                                        <td>Date</td>
                                                         <td>Action</td>
                                                     </tr>
                                                 </thead>
@@ -210,15 +211,16 @@
                                                             <td>${fee.paymentId}</td>
                                                             <td>${fee.paymentAmount}</td>
                                                             <td>${fee.purposeOfPayment}</td>
+                                                            <td>${fee.date}</td>
 
                                                             <td>
                                                                 <div>
-                                                                    <a href='updateFeePage?update=${fee.id}'
+                                                                    <a href='updateFeePage?id=${fee.paymentId}'
                                                                         class='btn btn-warning btn-xs'>Update</a>
                                                                 </div>
                                                                 <br>
                                                                 <div>
-                                                                    <a href='deleteFee?id=${fee.id}'
+                                                                    <a href='deleteFee?id=${fee.paymentId}'
                                                                         class='btn btn-danger btn-xs'>Delete&nbsp;</a>
                                                                 </div>
                                                             </td>

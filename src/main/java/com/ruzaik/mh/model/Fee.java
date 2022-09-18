@@ -1,25 +1,32 @@
 package com.ruzaik.mh.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Fee {
 
-	@Id
-	@GeneratedValue
-	private int id;
 	private String registrationNumber;
+	@Id
 	private String paymentId;
-	private String paymentAmount;
+	private Double paymentAmount;
 	private String purposeOfPayment;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	private Date date;
 	
-	public int getId() {
-		return id;
+	public Date getDate() {
+		return date;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	public String getRegistrationNumber() {
 		return registrationNumber;
@@ -33,10 +40,10 @@ public class Fee {
 	public void setPaymentId(String paymentId) {
 		this.paymentId = paymentId;
 	}
-	public String getPaymentAmount() {
+	public Double getPaymentAmount() {
 		return paymentAmount;
 	}
-	public void setPaymentAmount(String paymentAmount) {
+	public void setPaymentAmount(Double paymentAmount) {
 		this.paymentAmount = paymentAmount;
 	}
 	public String getPurposeOfPayment() {
@@ -47,8 +54,7 @@ public class Fee {
 	}
 	@Override
 	public String toString() {
-		return "Fee [id=" + id + ", registrationNumber=" + registrationNumber + ", paymentId=" + paymentId
-				+ ", paymentAmount=" + paymentAmount + ", purposeOfPayment=" + purposeOfPayment + "]";
+		return "Fee [registrationNumber=" + registrationNumber + ", paymentId=" + paymentId + ", paymentAmount="
+				+ paymentAmount + ", purposeOfPayment=" + purposeOfPayment + ", date=" + date + "]";
 	}
-	
 }

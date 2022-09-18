@@ -34,7 +34,7 @@ public class StudentController {
 	public ModelAndView addNewStudent(Student student) 
 	{
 		List<Student> studentList = repo.findAll();
-		boolean result = false;
+		boolean result = true;
 		
 		for(Student s : studentList) {
 			

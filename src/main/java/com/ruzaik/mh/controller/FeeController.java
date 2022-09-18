@@ -67,16 +67,16 @@ public class FeeController {
 	}
 	
 	@RequestMapping("/deleteFee")
-	public ModelAndView deleteFee(int id)
+	public ModelAndView deleteFee(String id)
 	{
 		repo.deleteById(id);
 		return viewFee();
 	}
 	
 	@RequestMapping("/updateFeePage")
-	public ModelAndView updateFeePage(int update)
+	public ModelAndView updateFeePage(String id)
 	{
-		Fee studentFee = repo.getReferenceById(update);
+		Fee studentFee = repo.getReferenceById(id);
 		ModelAndView mv = new ModelAndView("update-fee");
 		mv.addObject("studentFee", studentFee);
 		return mv;
