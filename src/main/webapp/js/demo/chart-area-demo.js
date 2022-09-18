@@ -29,12 +29,25 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
+var monthJan = document.getElementById("monthJan").value;
+var monthFeb = document.getElementById("monthFeb").value;
+var monthMar = document.getElementById("monthMar").value;
+var monthApr = document.getElementById("monthApr").value;
+var monthMay = document.getElementById("monthMay").value;
+var monthJun = document.getElementById("monthJun").value;
+var monthJul = document.getElementById("monthJul").value;
+var monthAug = document.getElementById("monthAug").value;
+var monthSpt = document.getElementById("monthSpt").value;
+var monthOct = document.getElementById("monthOct").value;
+var monthNav = document.getElementById("monthNav").value;
+var monthDec = document.getElementById("monthDec").value;
+
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
-      label: "Earnings",
+      label: "Total Fees",
       lineTension: 0.3,
       backgroundColor: "rgba(78, 115, 223, 0.05)",
       borderColor: "rgba(78, 115, 223, 1)",
@@ -46,7 +59,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [1000, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+      data: [monthJan, monthFeb, monthMar, monthApr, monthMay, monthJun, monthJul, monthAug, monthSpt, monthOct, monthNav, monthDec],
     }],
   },
   options: {

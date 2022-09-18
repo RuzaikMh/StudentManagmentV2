@@ -254,21 +254,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-primary">Fees Overview</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -410,6 +396,19 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <input value="${monthJan}" type="hidden" id="monthJan">
+                            <input value="${monthFeb}" type="hidden" id="monthFeb">
+                            <input value="${monthMar}" type="hidden" id="monthMar">
+                            <input value="${monthApr}" type="hidden" id="monthApr">
+                            <input value="${monthMay}" type="hidden" id="monthMay">
+                            <input value="${monthJun}" type="hidden" id="monthJun">
+                            <input value="${monthJul}" type="hidden" id="monthJul">
+                            <input value="${monthAug}" type="hidden" id="monthAug">
+                            <input value="${monthSpt}" type="hidden" id="monthSpt">
+                            <input value="${monthOct}" type="hidden" id="monthOct">
+                            <input value="${monthNav}" type="hidden" id="monthNav">
+                            <input value="${monthDec}" type="hidden" id="monthDec">
 							
                         </div>
                     </div>
