@@ -149,14 +149,7 @@
                     </button>
 
                     <a class="navbar-brand d-sm-none-max"><i class="fas fa-tachometer-alt"></i> Dashboard </a>
-
-                    <a href="#" class="btn btn-primary ml-auto btn-icon-split">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-                        <span class="text">Exit</span>
-                    </a>
-
+                    
                 </nav>
                 <!-- End of Topbar -->
 
