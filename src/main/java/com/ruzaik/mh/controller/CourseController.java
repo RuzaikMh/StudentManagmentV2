@@ -25,7 +25,7 @@ public class CourseController {
 	@RequestMapping("add-new-course")
 	public ModelAndView addNewCourse(Course course) {
 		List<Course> courseList = repo.findAll();
-		boolean result = false;
+		boolean result = true;
 		
 		for(Course c : courseList) {
 			

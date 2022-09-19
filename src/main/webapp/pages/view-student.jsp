@@ -179,7 +179,7 @@
                                         <form action = "serachStudent" method="get" class="d-sm-inline-block form-inline">
                                             <div class="input-group">
                                                 <input type="text" class="form-control border-0 small"
-                                                    placeholder="Search" aria-label="Search"
+                                                    placeholder="Student Name" aria-label="Search"
                                                     name="search" aria-describedby="basic-addon2">
                                                 <div class="input-group-append">
                                                     <button class="btn btn-primary" type="submit">

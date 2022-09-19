@@ -179,7 +179,7 @@
                                         <form action = "searchFee" method="get" class="d-sm-inline-block form-inline">
                                             <div class="input-group">
                                                 <input type="text" class="form-control border-0 small"
-                                                    placeholder="Search" aria-label="Search"
+                                                    placeholder="Registration Number" aria-label="Search"
                                                     name="search" aria-describedby="basic-addon2">
                                                 <div class="input-group-append">
                                                     <button class="btn btn-primary" type="submit">
@@ -209,7 +209,7 @@
                                                             <th scope="row">1</th>
                                                             <td>${fee.registrationNumber}</td>
                                                             <td>${fee.paymentId}</td>
-                                                            <td>${fee.paymentAmount}</td>
+                                                            <td class="rounded">${fee.paymentAmount}</td>
                                                             <td>${fee.purposeOfPayment}</td>
                                                             <td>${fee.date}</td>
 
