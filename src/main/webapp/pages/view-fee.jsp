@@ -198,7 +198,7 @@
                                                         <td>Registration Number</td>
                                                         <td>Payment Id</td>
                                                         <td>Payment Amount</td>
-                                                        <td>Purpose Of Payment</td>
+                                                        <td>Purpose</td>
                                                         <td>Date</td>
                                                         <td>Action</td>
                                                     </tr>

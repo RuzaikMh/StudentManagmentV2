@@ -202,7 +202,7 @@
                                                 <select name="purposeOfPayment" id="purpose" class="form-control" required="required">
                                                     <option value="">Select Purpose of Payment</option>
 	                                                <option value="Registration Fee" <c:if test="${studentFee.purposeOfPayment eq 'Registration Fee'}">selected="selected"</c:if> >Registration Fee</option>
-	                                                <option value="Semester Registration Fee" <c:if test="${studentFee.purposeOfPayment eq 'Semester Registration Fee'}">selected="selected"</c:if> >Semester Registration Fee</option>
+	                                                <option value="Course Registration Fee" <c:if test="${studentFee.purposeOfPayment eq 'Course Registration Fee'}">selected="selected"</c:if> >Course Registration Fee</option>
 	                                                <option value="Prorata Fee" <c:if test="${studentFee.purposeOfPayment eq 'Prorata Fee'}">selected="selected"</c:if> >Prorata Fee</option>
 	                                                <option value="Repeat Exam Fee" <c:if test="${studentFee.purposeOfPayment eq 'Repeat Exam Fee'}">selected="selected"</c:if> >Repeat Exam Fee</option>
                                                 </select>

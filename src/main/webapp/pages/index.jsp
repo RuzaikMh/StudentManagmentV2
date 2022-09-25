@@ -285,7 +285,7 @@
 	                                            	<th>#</th>
 	                                                <th scope="col">Reg Num</th>
 	                                                <th scope="col">Amount</th>
-	                                                <th scope="col">Purpose Of Payment</th>
+	                                                <th scope="col">Purpose</th>
 	                                                <th scope="col">Date</th>
 	                                            </tr>
 	                                        </thead>

@@ -202,7 +202,7 @@
                                                 <select name="purposeOfPayment" id="purpose" class="form-control" required="required">
                                                     <option value="">Select Purpose of Payment</option>
 	                                                <option value="Registration Fee">Registration Fee</option>
-	                                                <option value="Semester Registration Fee">Semester Registration Fee</option>
+	                                                <option value="Course Registration Fee">Course Registration Fee</option>
 	                                                <option value="Prorata Fee">Prorata Fee</option>
 	                                                <option value="Repeat Exam Fee">Repeat Exam Fee</option>
                                                 </select>
