@@ -216,7 +216,7 @@
                                         <div class="form-row">
                                         	<div class="form-group col-md-12">
                                                 <label for="date">Date</label>
-                                                <input name="date" type="date" class="form-control" id="date">
+                                                <input name="date" type="date" class="form-control" id="date" required="required">
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Add</button>
