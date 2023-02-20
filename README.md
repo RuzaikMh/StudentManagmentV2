@@ -8,10 +8,11 @@ Technology used
 - JSP
 - Bootstrap
 - PostgreSQL
- 
- ## Screenshots
-### Live
+
+## Live
 https://studentmanagmentv2-production.up.railway.app/
+
+## Screenshots
 
 ### Dashboard
 
