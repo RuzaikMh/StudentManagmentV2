@@ -1,4 +1,4 @@
-# Student Managment System V2
+# Student Managment System
 
 This is a spring boot web application for student management. This allows users to maintain student, course, student fee, and attendance records.
 
