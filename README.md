@@ -1,6 +1,6 @@
 # Student Managment System
 
-This is a spring boot web application for student management. This allows users to maintain student, course, student fee, and attendance records.
+This is a spring boot web application for student management. This allows users to maintain student, course, student fee and attendance records.
 
 Technology used
 - Spring boot
