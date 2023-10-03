@@ -2,7 +2,7 @@
 
 This is a spring boot web application for student management. This allows users to maintain student, course, student fee and attendance records.
 
-Technology used
+# Technology used
 - Spring boot
 - Spring boot data jpa
 - JSP
